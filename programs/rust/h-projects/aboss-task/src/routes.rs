@@ -47,7 +47,7 @@ async fn stat(querry: Query<QuerryData>, map: Data<MapData>) -> HttpResponse {
     if let Some(pair_data) = res {
         let data: StatsResponse = pair_data.read().into();
         HttpResponseBuilder::new(StatusCode::OK)
-            .body(serde_json::to_string(&data).unwrap_or("Error while Sending".to_string()))
+        .json(&data)
     } else {
         HttpResponseBuilder::new(StatusCode::NO_CONTENT)
             .body("The content you search does not exist")
@@ -70,7 +70,7 @@ async fn stats(map: Data<MapData>) -> HttpResponse {
     }
 
     HttpResponseBuilder::new(StatusCode::OK)
-        .body(serde_json::to_string(&result).unwrap_or("Error while Sending".to_string()))
+    .json(&result)
 }
 
 /// Initialize all routes for the application.
