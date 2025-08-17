@@ -9,8 +9,8 @@ A real-time price tracking and statistics API for multiple trading symbols. It p
 1. **Clone the repository**
 
 ```bash
-git clone <repo-url>
-cd <repo-directory>
+git clone https://github.com/LOKESH-999/aboss_task
+cd aboss_task
 ```
 
 2. **Create a `.env` file** with configuration:
